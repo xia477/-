@@ -34,15 +34,19 @@ public class CategoryServiceImpl implements CategoryService {
         BeanUtils.copyProperties(categoryDTO, category);
 
         category.setStatus(StatusConstant.DISABLE);
-        category.setCreateTime(LocalDateTime.now());
-        category.setUpdateTime(LocalDateTime.now());
-        category.setCreateUser(BaseContext.getCurrentId());
-        category.setUpdateUser(BaseContext.getCurrentId());
+//        category.setCreateTime(LocalDateTime.now());
+//        category.setUpdateTime(LocalDateTime.now());
+//        category.setCreateUser(BaseContext.getCurrentId());
+//        category.setUpdateUser(BaseContext.getCurrentId());
 
         categoryMapper.insert(category);
     }
 
-    @Override
+    /**
+     * 分页查询
+     * @param categoryPageQueryDTO
+     * @return
+     */
     public PageResult pageQuery(CategoryPageQueryDTO categoryPageQueryDTO) {
         //开始分页查询
         //PageHelper会在当前线程中设置一个分页参数，接下来的数据库查询会被这个分页参数影响，自动进行分页处理。
@@ -67,19 +71,23 @@ public class CategoryServiceImpl implements CategoryService {
         BeanUtils.copyProperties(categoryDTO, category);
 
         category.setStatus(StatusConstant.DISABLE);
-        category.setUpdateTime(LocalDateTime.now());
-        category.setUpdateUser(BaseContext.getCurrentId());
+//        category.setUpdateTime(LocalDateTime.now());
+//        category.setUpdateUser(BaseContext.getCurrentId());
 
         categoryMapper.update(category);
     }
 
-    @Override
+    /**
+     * 启用禁用分类
+     * @param status
+     * @param id
+     */
     public void startOrStop(Integer status, Long id) {
         Category category = new Category();
         category.setId(id);
         category.setStatus(status);
-        category.setUpdateTime(LocalDateTime.now());
-        category.setUpdateUser(BaseContext.getCurrentId());
+//        category.setUpdateTime(LocalDateTime.now());
+//        category.setUpdateUser(BaseContext.getCurrentId());
         categoryMapper.update(category);
     }
 
