@@ -14,8 +14,6 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -105,7 +103,6 @@ public class CategoryServiceImpl implements CategoryService {
      * @return
      */
     public List<Category> list(Integer type) {
-        List<Category> list = categoryMapper.list(type);
-        return list;
+        return categoryMapper.list(type);
     }
 }

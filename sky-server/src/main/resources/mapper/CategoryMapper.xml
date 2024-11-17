@@ -36,7 +36,7 @@
         where id = #{id}
     </update>
 
-    <select id="list" parameterType="Category">
+    <select id="list" resultType="Category">
         select * from category
         where status = 1
         <if test="type != null">
