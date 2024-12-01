@@ -8,6 +8,8 @@ sky:
     password: 23560640737
   alioss:
     endpoint: oss-cn-hangzhou.aliyuncs.com
-    access-key-id:
-    access-key-secret:
     bucket-name: xia477
+  redis:
+    host: localhost
+    port: 6379
+    database: 9
